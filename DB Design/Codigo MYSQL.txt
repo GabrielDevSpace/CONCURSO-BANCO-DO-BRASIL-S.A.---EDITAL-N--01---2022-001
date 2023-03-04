@@ -1,0 +1,45 @@
+############################ TABELAS - CONCURSOS ################################
+
+CREATE TABLE subject_title (
+  id_title INT NOT NULL AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
+  data_created DATE NOT NULL DEFAULT CURRENT_DATE(),
+  PRIMARY KEY (id_title)
+);
+
+CREATE TABLE subject_subtitle (
+  id_subtitle INT NOT NULL AUTO_INCREMENT,
+  subtitle VARCHAR(255) DEFAULT NULL,
+  data_created DATE NOT NULL DEFAULT CURRENT_DATE(),
+  id_title INT NOT NULL,
+  PRIMARY KEY (id_subtitle),
+  FOREIGN KEY (id_title) REFERENCES subject_title(id_title) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE content_subject (
+  id_content INT NOT NULL AUTO_INCREMENT,
+  content BLOB DEFAULT NULL,
+  data_created DATE NOT NULL DEFAULT CURRENT_DATE(),
+  id_title INT NOT NULL,
+  PRIMARY KEY (id_content),
+  FOREIGN KEY (id_title) REFERENCES subject_title(id_title) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE subject_note (
+  id_note INT NOT NULL AUTO_INCREMENT,
+  note BLOB DEFAULT NULL,
+  data_created DATE NOT NULL DEFAULT CURRENT_DATE(),
+  id_title INT NOT NULL,
+  PRIMARY KEY (id_note),
+  FOREIGN KEY (id_title) REFERENCES subject_title(id_title) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+##################################################################
+
+Nesse código, primeiro criamos a tabela subject_title com as colunas id_title, title e data_created. A chave primária é definida como id_title.
+
+Em seguida, criamos a tabela subject_subtitle com as colunas id_subtitle, subtitle, data_created e id_title. A chave primária é definida como id_subtitle, enquanto a chave estrangeira id_title é definida como uma referência para a tabela subject_title na coluna id_title, com a opção ON DELETE CASCADE para garantir que todos os registros associados a um determinado subject_title sejam excluídos quando o próprio subject_title for excluído.
+
+Depois, criamos a tabela content_subject com as colunas id_content, content, data_created e id_title. A chave primária é definida como id_content, enquanto a chave estrangeira id_title é definida como uma referência para a tabela subject_title na coluna id_title, também com a opção ON DELETE CASCADE.
+
+Por fim, criamos a tabela subject_note com as colunas id_note, note, data_created e id_title. A chave primária é definida como id_note, enquanto a chave estrangeira id_title é definida como uma referência para a tabela subject_title na coluna id_title, também com a opção ON DELETE CASCADE.

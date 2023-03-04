@@ -1,0 +1,40 @@
+######## DIGRAMA UML BANCO DE DADOS - CONCURSOS ###########
+
+
++-----------------+      1       +------------------------+
+|   subject_title |--------------|   subject_subtitle     |
++-----------------+      *       +------------------------+
+| PK id_title     |  NN  |       | PK id_subtitle         |
+|    title        |  NN  |       |    subtitle            |
+|    data_created |      |       |    data_created        |
++-----------------+      |       | FK id_title REFERENCES |
+                         |       | subject_title(id_title)|
+                         |       +-----------------------+
+                         |1
+                         |
+                         |
+                  +----------------------------+
+                  |     content_subject        |
+                  +----------------------------+
+                  | PK  id_content             |
+                  |     content                |
+                  |     data_created           |
+                  | FK  id_title REFERENCES    |
+                  |     subject_title(id_title)|
+                  +----------------------------+
+                          |1
+                          |
+                          |
+                          |
+                          |
+                  +----------------------------+
+                  |      subject_note          |
+                  +----------------------------+
+                  | PK  id_note                |
+                  |     note                   |
+                  |     data_created           |
+                  | FK  id_title REFERENCES    |
+                  |     subject_title(id_title)|
+                  +----------------------------+
+
+##############################################################
