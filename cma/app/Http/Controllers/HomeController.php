@@ -15,6 +15,6 @@ class HomeController
     {
         $mensagem = 'Bem-vindo(a) ao meu projeto Laravel!';
 
-        return view('welcome', compact('mensagem'));
+        return view('main', compact('mensagem'));
     }
 }
