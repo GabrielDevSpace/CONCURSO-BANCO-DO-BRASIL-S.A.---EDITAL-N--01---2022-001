@@ -2,19 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Routing\Controller as BaseController;
 
-class HomeController extends Controller
+class Controller extends BaseController
 {
-    /**
-     * Exibe a página principal da aplicação.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function index()
-    {
-        $mensagem = 'Bem-vindo(a) ao meu projeto Laravel!';
-
-        return view('welcome', compact('mensagem'));
-    }
+    use AuthorizesRequests, ValidatesRequests;
 }
