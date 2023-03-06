@@ -5,8 +5,8 @@
     <div class="wrapper d-flex align-items-stretch">
         @include('sidebarMenu')
         <!-- Page Content  -->
-        @include('subjectNote')
+        @include('formSubject')
     </div>
-        @include('scriptsMain')
+        @include('scripts')
 </body>
 </html>
