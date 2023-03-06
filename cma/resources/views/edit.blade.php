@@ -7,6 +7,6 @@
         <!-- Page Content  -->
         @include('subjectNote')
     </div>
-        @include('scriptsMain')
+        @include('scriptsMainEdit')
 </body>
 </html>

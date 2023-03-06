@@ -7,7 +7,7 @@
             </div>
             <div class="p-4">
 
-                <h1><a href="index.html" class="logo">Portfolic <span>Portfolio Agency</span></a></h1>
+                <h1><a href="index.html" class="logo">SubjectNotes<span>Aprendendo a Aprender</span></a></h1>
 
                 <!-- <div class="mb-5">
 
@@ -38,7 +38,7 @@
                     @endforeach
                     <br><br>
                     <li>
-                        <a href="#"><span class="fa fa-save mr-3"></span> Cadastrar Matérias</a>
+                        <a href="{{ route('subject') }}"><span class="fa fa-save mr-3"></span> Cadastrar Matérias</a>
                     </li>
                 </ul>
                 <div class="footer">
