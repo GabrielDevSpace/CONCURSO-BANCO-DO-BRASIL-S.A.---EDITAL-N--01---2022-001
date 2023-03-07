@@ -87,14 +87,20 @@ class HomeController
         $editordata = $request->editordata;
         $editordata2 = $request->editordata2;
 
+        if(empty($editordata)){
+            $editordata = "Materia";
+        }
+
+        if(empty($editordata2)){
+            $editordata2 = "Anotações";
+        }
+
+
         //dd($editordata, $idtitle, $idsubtitle);
 
         $content_exist = subject_content::where('id_title', $idtitle)->where('id_subtitle', $idsubtitle)
             ->get();
-
-        $id_content = $content_exist->id;
-        dd($id_content);
-        
+            
         $note_exist = subject_note::where('id_title', $idtitle)->where('id_subtitle', $idsubtitle)
             ->get();
         
@@ -114,12 +120,20 @@ class HomeController
             $newRecord = new subject_content;
             $newRecord->id_title = $idtitle;
             $newRecord->id_subtitle = $idsubtitle;
-            $newRecord->id_content = $id_content;
             $newRecord->content = $editordata;
             $newRecord->save();
             $message = "Criado";
+
         }
 
+        $content_exist = subject_content::where('id_title', $idtitle)->where('id_subtitle', $idsubtitle)
+            ->get();
+        
+        $content_id = subject_content::where('id_title', $idtitle)->where('id_subtitle', $idsubtitle)
+            ->get();
+            
+
+        $id_content =  $content_id->pluck('id')->first();
         // Verifica se Ja existe Note referente ao subtitulo
         if ($note_exist->count() > 0) {
 
@@ -136,6 +150,7 @@ class HomeController
             $newRecordNote = new subject_note;
             $newRecordNote->id_title = $idtitle;
             $newRecordNote->id_subtitle = $idsubtitle;
+            $newRecordNote->id_content = $id_content;
             $newRecordNote->note = $editordata2;
             $newRecordNote->save();
             $message = "Criado";

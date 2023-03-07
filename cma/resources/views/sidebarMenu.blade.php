@@ -6,27 +6,11 @@
                 </button>
             </div>
             <div class="p-4">
-
-                <h1><a href="index.html" class="logo">SubjectNotes<span>Aprendendo a Aprender</span></a></h1>
-
-                <!-- <div class="mb-5">
-
-                    <form action="#" class="subscribe-form">
-                <div class="row" style="margin-right:0">
-                <div class="col-md-9 form-group d-flex">
-                            <div class="icon"><span class="icon-paper-plane"></span></div>
-                            <input type="text" class="form-control" placeholder="Add Nova Materia">
-                </div>
-                <div class="col-md-3">
-                    <button class="form-group btn btn-success">ADD</button>
-                </div>    
-                    
-                    </form>
-                </div> -->
+                <h1><a href="/" class="logo">SubjectNotes<span>Aprendendo a Aprender</span></a></h1>
                 <ul class="list-unstyled components mb-5">
                     @foreach($registros as $registro)
                     <li class="has-submenu">
-                        <a href="#"><span class="fa fa-book mr-3"></span>{{$registro->title}}</a>
+                        <a href="#"><span class="fa fa-book mr-3 text-white"></span>{{$registro->title}}</a>
                         <ul class="submenu">
                             @foreach($subtitles as $subtitle)
                             @if($subtitle->id_title == $registro->id_title)
@@ -42,11 +26,9 @@
                     </li>
                 </ul>
                 <div class="footer">
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>
-                            document.write(new Date().getFullYear());
-                        </script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    <p align="center">
+                        Projeto desenvolvido para organizar os estudos e registrar as anotações referente a cada matéria. <i class="icon-heart" aria-hidden="true"></i><br><br>Criado por: <a href="https://developerspace.com.br/" target="_blank" style="color: #fff">@developerspace</a>
+                    </p>
                 </div>
             </div>
         </nav>
