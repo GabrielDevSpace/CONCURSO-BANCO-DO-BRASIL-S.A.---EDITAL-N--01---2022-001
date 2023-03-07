@@ -25,7 +25,7 @@
                         <br><br>
                         <div class="form-group">
                             <label for="valores">Lista de Assuntos:</label>
-                            <textarea class="form-control" id="valores" rows="5" style="border: 1px solid #f0f0f0"></textarea>
+                            <textarea readonly class="form-control" id="valores" rows="10" style="height: auto;border: 1px solid #f0f0f0"></textarea>
                         </div>
                         <button class="btn btn-primary" type="submit">Salvar</button>
                     </form>

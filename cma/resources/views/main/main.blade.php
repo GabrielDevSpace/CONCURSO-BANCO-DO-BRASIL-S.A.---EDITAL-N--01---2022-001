@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
-        @include('head')
+        @include('layout.head')
 <body>
     <div class="wrapper d-flex align-items-stretch">
-        @include('sidebarMenu')
+        @include('layout.sidebarMenu')
         <!-- Page Content  -->
-        @include('MainContent')
+        @include('main.MainContent')
     </div>
-        @include('scriptsMain')
+        @include('main.mainScript')
 </body>
 </html>

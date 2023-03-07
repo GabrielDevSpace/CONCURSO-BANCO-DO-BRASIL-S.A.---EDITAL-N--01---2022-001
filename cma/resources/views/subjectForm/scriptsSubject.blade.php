@@ -46,6 +46,7 @@
       function adicionarValor() {
         // Obtém o valor digitado no input
         var valor = document.getElementById("valor").value;
+        valor = valor.replace(/,/g, ";");
         // Adiciona o valor ao array
         valores.push(valor);
         // Atualiza o valor da área de texto
@@ -60,9 +61,10 @@
 <script>
 $(document).ready(function() {
     $('#formSubject').submit(function(e) {
-        e.preventDefault(); // evitar que o formulário seja enviado normalmente
+         // evitar que o formulário seja enviado normalmente
         var subject = $('#subject').val();
         var valores = $('#valores').val();
+
         $.ajax({
             type: "POST",
             url: "{{ route('submit_formSubject') }}",
