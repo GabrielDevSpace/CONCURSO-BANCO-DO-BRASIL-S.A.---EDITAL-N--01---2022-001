@@ -14,18 +14,18 @@
                         @csrf
                         <div class="form-group">
                             <label for="valor">Materia:</label>
-                            <input type="text" class="form-control" id="subject" style="border: 1px solid #f0f0f0" required>
+                            <input type="text" class="form-control" id="subject" autocomplete="off" style="border: 1px solid #f0f0f0" required>
                             <br>
                             <label for="valor">Assunto:</label>
                             <br>
                             <small>Digite um assunto para ser adicionado a lista. </small>
-                            <input type="text" class="form-control" id="valor" style="border: 1px solid #f0f0f0">
+                            <input type="text"  class="form-control" id="valor" autocomplete="off" style="border: 1px solid #f0f0f0">
                         </div>
                         <button type="button" class="btn btn-primary" onclick="adicionarValor()">Adicionar</button>
                         <br><br>
                         <div class="form-group">
                             <label for="valores">Lista de Assuntos:</label>
-                            <textarea readonly class="form-control" id="valores" rows="10" style="height: auto;border: 1px solid #f0f0f0"></textarea>
+                            <textarea readonly class="form-control" id="valores" rows="10"  style="height: auto;border: 1px solid #f0f0f0"></textarea>
                         </div>
                         <button class="btn btn-primary" type="submit">Salvar</button>
                     </form>
