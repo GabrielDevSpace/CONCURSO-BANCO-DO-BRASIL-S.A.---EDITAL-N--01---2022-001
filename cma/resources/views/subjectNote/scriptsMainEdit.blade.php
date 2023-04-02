@@ -36,14 +36,36 @@
 <script>
     $('#summernote').summernote({
         placeholder: 'Matéria',
-        height: 600
+        height: 600,
+        toolbar: [
+    ['style', ['style']],
+    ['fontsize', ['fontsize']],
+    ['font', ['bold', 'italic', 'underline', 'clear']],
+    ['fontname', ['fontname']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']],
+    ['height', ['height']],
+    ['insert', ['picture', 'hr']],
+    ['table', ['table']]
+  ],
     });
 </script>
 
 <script>
     $('#summernote2').summernote({
         placeholder: 'Anotações',
-        height: 600
+        height: 600,
+        toolbar: [
+    ['style', ['style']],
+    ['fontsize', ['fontsize']],
+    ['font', ['bold', 'italic', 'underline', 'clear']],
+    ['fontname', ['fontname']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']],
+    ['height', ['height']],
+    ['insert', ['picture', 'hr']],
+    ['table', ['table']]
+  ],
     });
 </script>
 <script>
