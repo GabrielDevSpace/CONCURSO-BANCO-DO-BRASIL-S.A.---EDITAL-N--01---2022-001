@@ -28,3 +28,7 @@ Route::post('/submit_note', 'App\Http\Controllers\HomeController@submit_note')->
 Route::get('/subject', 'App\Http\Controllers\HomeController@subject')->name('subject');
 
 Route::post('/submit_formSubject', 'App\Http\Controllers\HomeController@submitFormSubject')->name('submit_formSubject');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
